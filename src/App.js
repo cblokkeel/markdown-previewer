@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import Input from './Components/Input'
+import MarkdownView from './Components/MarkdownPreview'
 
-function App() {
+const App = () => {
+  const [input, setInput] = useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className='grid gap-5 grid-cols-2 bg-gray-100 min-h-screen'>
+      <Input setInput={setInput}/>
+      <MarkdownView input={input}/>
+    </main>
   );
 }
 
